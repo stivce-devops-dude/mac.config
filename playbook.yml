@@ -1,0 +1,27 @@
+---
+- name: Configure macOS
+  hosts: localhost
+  connection: local
+  become: false
+
+  roles:
+    - role: macos-update
+      tags: [update]
+
+    - role: homebrew
+      tags: [homebrew]
+
+    - role: macos-defaults
+      tags: [defaults]
+
+    - role: common
+      tags: [directories]
+
+    - role: macos-sudo
+      tags: [sudo]
+
+    - role: packages-base
+      tags: [packages]
+
+    - role: dotfiles
+      tags: [dotfiles]
