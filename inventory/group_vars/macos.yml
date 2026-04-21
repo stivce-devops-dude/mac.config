@@ -25,3 +25,6 @@ homebrew_casks:
   - iina
   - karabiner-elements
   - localsend
+  - antigravity
+  - balenaetcher
+  - utm

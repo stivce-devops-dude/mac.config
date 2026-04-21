@@ -22,6 +22,3 @@
 
     - role: packages-base
       tags: [packages]
-
-    - role: dotfiles
-      tags: [dotfiles]
