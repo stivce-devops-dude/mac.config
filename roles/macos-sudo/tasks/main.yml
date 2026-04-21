@@ -1,10 +1,11 @@
 ---
-- name: Update Homebrew sudoers to preserve required env vars
+- name: Update sudoers to allow passwordless softwareupdate
   ansible.builtin.copy:
-    dest: /etc/sudoers.d/homebrew
+    dest: /etc/sudoers.d/softwareupdate
     content: |
-      {{ ansible_user_id }} ALL=(ALL) NOPASSWD: ALL
+      {{ ansible_user_id }} ALL=(ALL) NOPASSWD: /usr/sbin/softwareupdate
     mode: "0440"
+    validate: visudo -cf %s
   become: true
   tags:
     - sudo
